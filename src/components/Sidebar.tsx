@@ -61,6 +61,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onCategoryChange }) => {
             activeCategory={activeCategory}
             onCategoryChange={handleCategoryChange}
           />
+          <Link to="/games" className={`sidebar-item w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${location.pathname === '/games' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}>
+              <GamepadIcon size={18} />
+              <span className="tamil">விளையாட்டு</span>
+          </Link>
         </div>
         
         <div className="px-3 mb-6">
@@ -84,10 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onCategoryChange }) => {
                 <MessageSquare size={18} />
                 <span className="tamil">பின்தொடர்பவர்கள்</span>
               </Link>
-              <Link to="/games" className={`sidebar-item w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${location.pathname === '/games' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}>
-                <GamepadIcon size={18} />
-                <span className="tamil">விளையாட்டு</span>
-              </Link>
+              
             </div>
           </div>
         </div>
