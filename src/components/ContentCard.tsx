@@ -104,7 +104,6 @@ const ContentCard: React.FC<ContentCardProps> = ({
   const formatContent = () => {
     if (!truncateLines || showFullText) {
       return (
-<<<<<<< HEAD
         <div data-lov-id="content-lines" className="text-sm text-gray-600 mb-1 tamil">
           {excerpt.split('\n').map((line, i) => (
             <React.Fragment key={i} >
@@ -113,16 +112,6 @@ const ContentCard: React.FC<ContentCardProps> = ({
             </React.Fragment>
           ))}
         </div>
-=======
-        <p className="text-sm text-gray-600 mb-1 tamil">
-          {excerpt.split('\n').map((line, i) => (
-            <React.Fragment key={i}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </p>
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
       );
     } else {
       const lines = excerpt.split('\n').slice(0, truncateLines);
@@ -130,7 +119,6 @@ const ContentCard: React.FC<ContentCardProps> = ({
       
       return (
         <>
-<<<<<<< HEAD
           <div data-lov-id="content-lines" className="text-sm text-gray-600 mb-1 tamil">
             {lines.map((line, i) => (              
               <React.Fragment key={i}>
@@ -140,17 +128,6 @@ const ContentCard: React.FC<ContentCardProps> = ({
             ))}
             {hasMoreLines && '...'}
           </div>
-=======
-          <p className="text-sm text-gray-600 mb-1 tamil">
-            {lines.map((line, i) => (
-              <React.Fragment key={i}>
-                {line}
-                <br />
-              </React.Fragment>
-            ))}
-            {hasMoreLines && '...'}
-          </p>
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
           {hasMoreLines && (
             <Button 
               variant="link" 

@@ -369,8 +369,4 @@ const WritersSpotlight = () => {
   );
 };
 
-<<<<<<< HEAD
 export default WritersSpotlight;
-=======
-export default WritersSpotlight;
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7

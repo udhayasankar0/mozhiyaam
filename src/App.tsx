@@ -14,14 +14,11 @@ import WritersSpotlight from "./pages/WritersSpotlight";
 import Auth from "./pages/Auth";
 import ContentDetail from "./pages/ContentDetail";
 import Followers from "./pages/Followers";
-<<<<<<< HEAD
 import Vilayattu from "./pages/Vilayattu";
 import Quizz from "./pages/quizz/Quizz";
 import LevelOne from "./pages/cross-word-game/level1";
 import LevelTwo from "./pages/cross-word-game/level2";
 // import LevelThree from "./pages/cross-word-game/level3";
-=======
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
 
 const queryClient = new QueryClient();
 
@@ -52,14 +49,11 @@ const AppRoutes = () => {
       <Route path="/noname" element={<NoName />} />
       <Route path="/spotlight" element={<WritersSpotlight />} />
       <Route path="/followers" element={<ProtectedRoute><Followers /></ProtectedRoute>} />
-<<<<<<< HEAD
       <Route path="/vilayattu" element={<Vilayattu />} />
       <Route path="/quizz/Quizz" element={<Quizz />} />
       <Route path="/cross-word-game/level1" element={<LevelOne />} />
       <Route path="/cross-word-game/level2" element={<LevelTwo />} />
       {/* <Route path="/cross-word-game/level3" element={<LevelThree />} /> */}
-=======
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -61,15 +61,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onCategoryChange }) => {
             activeCategory={activeCategory}
             onCategoryChange={handleCategoryChange}
           />
-<<<<<<< HEAD
           <Link to="/vilayattu" className={`sidebar-item w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${location.pathname === '/vilayattu' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}>
             <GamepadIcon size={18} />
             <span className="tamil">விளையாட்டு</span>
-=======
-          <Link to="/games" className={`sidebar-item w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${location.pathname === '/games' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}>
-              <GamepadIcon size={18} />
-              <span className="tamil">விளையாட்டு</span>
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
           </Link>
         </div>
         
@@ -90,18 +84,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onCategoryChange }) => {
                 <User size={18} />
                 <span className="tamil">சுயவிவரம்</span>
               </Link>
-<<<<<<< HEAD
               {/* <Link to="/followers" className={`sidebar-item w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${location.pathname === '/followers' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}>
                 <MessageSquare size={18} />
                 <span className="tamil">பின்தொடர்பவர்கள்</span>
               </Link> */}
-=======
-              <Link to="/followers" className={`sidebar-item w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${location.pathname === '/followers' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}>
-                <MessageSquare size={18} />
-                <span className="tamil">பின்தொடர்பவர்கள்</span>
-              </Link>
-              
->>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
             </div>
           </div>
         </div>

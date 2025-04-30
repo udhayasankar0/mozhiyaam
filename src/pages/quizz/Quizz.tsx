@@ -116,7 +116,13 @@ const Quiz: React.FC = () => {
           ))}
         </ul>
         <Link to="/vilayattu" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md mt-10 inline-block">விலையாட்டுக்குத் திரும்பு</Link>
-        </div>
+        
+       
+      </div>
+      
+        
+
+       
       </div>
      
       </>
@@ -127,26 +133,29 @@ const Quiz: React.FC = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (<>
-  return (
       <Header />
       <div className="flex">
         <Sidebar />
-        
         <div className="flex-1 overflow-y-auto p-6">
           <h2 className="text-2xl font-bold mb-4">Question {currentQuestionIndex + 1} / {questions.length}</h2>
           <p className="mb-4">{currentQuestion.question}</p>
           <ul className="space-y-2">
             {currentQuestion.options.map((option, index) => (
-              <li key={index}>
-                <button className={`w-full text-left p-2 border rounded-md ${answers[currentQuestionIndex] === option ? 'bg-green-300' : ''}`} onClick={() => handleAnswer(option)}>
-                  {option}
-                </button>
-              </li>
+             <li key={index}>
+             <button
+               className={`text-left p-2 border rounded-md ${
+                 answers[currentQuestionIndex] === option ? 'bg-green-300' : ''
+               }`}
+               onClick={() => handleAnswer(option)}
+             >
+               {option}
+             </button>
+           </li>
             ))}
           </ul>
-          <button className="bg-green-600 text-white px-4 py-2 rounded-md mt-4" onClick={handleNext}>
-            {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'அடுத்தது'}
-          </button>
+          <div className="flex items-center gap-2 mt-4" onClick={handleNext}>
+          <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-green-500 stroke-2 fill-none"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>{currentQuestionIndex === questions.length - 1 ? 'Finish' : 'அடுத்தது'}
+          </div>
         </div>
       </div>
      </>
