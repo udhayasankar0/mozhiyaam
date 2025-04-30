@@ -100,22 +100,24 @@ const Quiz: React.FC = () => {
       <div className="flex">
         <Sidebar />
         <div className="flex-1 overflow-y-auto p-6">
-        <h2 className="text-2xl font-bold mb-4">வினாடி வினா முடிவுகள் </h2>
-        <p className="mb-4">
-          உங்கள் மதிப்பெண்: {calculateScore()} / {questions.length}
-        </p>
-        <ul className="space-y-4">
-          {questions.map((q, index) => (
-            <li key={index} className="border p-4 rounded-md">
-              <p className="font-bold mb-2">{q.question}</p>
-              <p>உங்கள் பதில்: {answers[index]}</p>
-              <p className={`font-semibold ${answers[index] === q.correctAnswer ? 'text-green-600' : 'text-red-600'}`}>
-                சரியான பதில்: {q.correctAnswer}
-              </p>
-            </li>
-          ))}
-        </ul>
-        <Link to="/vilayattu" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md mt-10 inline-block">விலையாட்டுக்குத் திரும்பு</Link>
+          <h2 className="text-3xl font-bold text-green-700 mb-6">வினாடி வினா முடிவுகள் </h2>
+          <div className="bg-gray-100 p-4 rounded-md shadow-md mb-6">
+            <p className="text-lg text-gray-700">
+              உங்கள் மதிப்பெண்: <span className="font-bold text-green-600">{calculateScore()}</span> / {questions.length}
+            </p>
+          </div>
+          <ul className="space-y-6">
+            {questions.map((q, index) => (
+              <li key={index} className="border border-gray-300 p-5 rounded-lg bg-white shadow-sm">
+                <p className="font-bold mb-3 text-gray-800">{q.question}</p>
+                <p className="text-gray-600">உங்கள் பதில்: {answers[index]}</p>
+                <p className={`font-semibold ${answers[index] === q.correctAnswer ? 'text-green-600' : 'text-red-600'}`}>
+                  சரியான பதில்: {q.correctAnswer}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <Link to="/vilayattu" className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg mt-10 inline-block font-medium">விலையாட்டுக்குத் திரும்பு</Link>
         
        
       </div>
@@ -137,25 +139,30 @@ const Quiz: React.FC = () => {
       <div className="flex">
         <Sidebar />
         <div className="flex-1 overflow-y-auto p-6">
-          <h2 className="text-2xl font-bold mb-4">Question {currentQuestionIndex + 1} / {questions.length}</h2>
-          <p className="mb-4">{currentQuestion.question}</p>
-          <ul className="space-y-2">
+          <h2 className="text-3xl font-bold text-green-700 mb-6">Question {currentQuestionIndex + 1} / {questions.length}</h2>
+          <p className="text-lg text-gray-800 mb-6">{currentQuestion.question}</p>
+          <ul className="space-y-4">
             {currentQuestion.options.map((option, index) => (
-             <li key={index}>
-             <button
-               className={`text-left p-2 border rounded-md ${
-                 answers[currentQuestionIndex] === option ? 'bg-green-300' : ''
-               }`}
-               onClick={() => handleAnswer(option)}
-             >
-               {option}
-             </button>
+              <li key={index}>
+                <button
+                  className={`w-full text-left px-4 py-3 border rounded-lg ${
+                    answers[currentQuestionIndex] === option
+                      ? 'bg-green-300 border-green-500 font-semibold text-green-800'
+                      : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
+                  } transition duration-300`}
+                  onClick={() => handleAnswer(option)}
+                >
+                  <span className="block text-base font-medium">
+                  {option}
+
+                  </span>
+                </button>
            </li>
             ))}
           </ul>
-          <div className="flex items-center gap-2 mt-4" onClick={handleNext}>
-          <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-green-500 stroke-2 fill-none"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>{currentQuestionIndex === questions.length - 1 ? 'Finish' : 'அடுத்தது'}
-          </div>
+          <button onClick={handleNext} className="mt-6 bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg inline-flex items-center justify-center">
+            {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'அடுத்தது'}
+          </button>
         </div>
       </div>
      </>
