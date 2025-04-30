@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MainLayout from '@/layouts/MainLayout';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import ModernCalendar from '@/components/ModernCalendar';
+=======
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import MainLayout from '@/layouts/MainLayout';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
 import { Calendar, Users } from "lucide-react";
 import {
   Card,
@@ -35,17 +43,27 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+<<<<<<< HEAD
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import ContentCard from "@/components/ContentCard";
 import FollowButton from "@/components/FollowButton";
 import FollowList from "@/components/FollowList";
   
+=======
+import { useAuth } from '@/context/AuthContext';
+import { supabase } from '@/integrations/supabase/client';
+import ContentCard from '@/components/ContentCard';
+import FollowButton from '@/components/FollowButton';
+import FollowList from '@/components/FollowList';
+
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
 const Profile = () => {
   const { id } = useParams<{ id: string }>();
   const { user } = useAuth();
   const [profileUser, setProfileUser] = useState<any>(null);
   const [userPosts, setUserPosts] = useState<any[]>([]);
+<<<<<<< HEAD
   const [selectedMonth, setSelectedMonth] = useState<number>(0);
   const [loading, setLoading] = useState(true);
 
@@ -60,6 +78,21 @@ const Profile = () => {
   };
   
     useEffect(() => {
+=======
+  const [loading, setLoading] = useState(true);
+  
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return 'Unknown';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+  
+  useEffect(() => {
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
     const fetchProfileData = async () => {
       setLoading(true);
       try {
@@ -72,12 +105,21 @@ const Profile = () => {
         
         const { data: profileData, error } = await supabase
           .from('profiles')
+<<<<<<< HEAD
           .select("*")
           .eq("id", profileId)
           .single();
           
         if (error) {
           console.error("Error fetching profile:", error);
+=======
+          .select('*')
+          .eq('id', profileId)
+          .single();
+          
+        if (error) {
+          console.error('Error fetching profile:', error);
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
           return;
         }
         
@@ -87,6 +129,7 @@ const Profile = () => {
         });
         
         const { data: posts, error: postsError } = await supabase
+<<<<<<< HEAD
           .from("posts")
           .select("*")
           .eq("user_id", profileId)
@@ -94,6 +137,15 @@ const Profile = () => {
           
         if (postsError) {
           console.error("Error fetching posts:", postsError);
+=======
+          .from('posts')
+          .select('*')
+          .eq('user_id', profileId)
+          .order('created_at', { ascending: false });
+          
+        if (postsError) {
+          console.error('Error fetching posts:', postsError);
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
           return;
         }
         
@@ -108,6 +160,7 @@ const Profile = () => {
     fetchProfileData();
   }, [id, user]);
   
+<<<<<<< HEAD
   const joinedDate = profileUser?.created_at
     ? formatDate(profileUser.created_at)
     : user?.created_at
@@ -120,6 +173,18 @@ const Profile = () => {
   const getInitials = () => {
     if (profileUser?.username)
       return profileUser.username.substring(0, 2).toUpperCase();
+=======
+  const joinedDate = profileUser?.created_at 
+    ? formatDate(profileUser.created_at) 
+    : user?.created_at 
+      ? formatDate(user.created_at) 
+      : 'Recently';
+      
+  const userEmail = profileUser?.username || (id ? 'User' : user?.email || 'No email');
+  
+  const getInitials = () => {
+    if (profileUser?.username) return profileUser.username.substring(0, 2).toUpperCase();
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
     if (!user?.email) return '??';
     return user.email.substring(0, 2).toUpperCase();
   };
@@ -147,7 +212,11 @@ const Profile = () => {
                   </div>
                 )}
               </CardHeader>
+<<<<<<< HEAD
               <CardContent >
+=======
+              <CardContent>
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-gray-500" />
@@ -178,7 +247,11 @@ const Profile = () => {
                 <TabsTrigger value="following">Following</TabsTrigger>
               </TabsList>
               
+<<<<<<< HEAD
               <TabsContent value="posts" className="mt-6" >
+=======
+              <TabsContent value="posts" className="mt-6">
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
                 {userPosts.length > 0 ? (
                   <div className="space-y-4">
                     {userPosts.map((post) => (
@@ -209,10 +282,17 @@ const Profile = () => {
               
               <TabsContent value="followers" className="mt-6">
                 {id || user?.id ? (
+<<<<<<< HEAD
                   <FollowList userId={id || user?.id || ""} type="followers" />
                 ) : (
                   <div className="text-center p-8 text-gray-500">
                     Loading followers.
+=======
+                  <FollowList userId={id || user?.id || ''} type="followers" />
+                ) : (
+                  <div className="text-center p-8 text-gray-500">
+                    Loading followers...
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
                   </div>
                 )}
               </TabsContent>
@@ -220,16 +300,25 @@ const Profile = () => {
               <TabsContent value="following" className="mt-6">
                 {id || user?.id ? (
                   <FollowList userId={id || user?.id || ''} type="following" />
+<<<<<<< HEAD
                 ) : ( 
+=======
+                ) : (
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
                   <div className="text-center p-8 text-gray-500">
                     Loading following...
                   </div>
                 )}
+<<<<<<< HEAD
               </TabsContent> 
+=======
+              </TabsContent>
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
             </Tabs>
 
              {isOwnProfile && (
               <div>
+<<<<<<< HEAD
                 <ModernCalendar />
                 <Card className="bg-white shadow-md rounded-lg overflow-hidden">  
                 <CardHeader>
@@ -285,6 +374,125 @@ const Profile = () => {
                      </div>
             )}
               </div>
+=======
+                {(() => {
+                  const months = ["Jan", "Feb", "Mar", "Apr"];
+                  const daysInMonth = { "Jan": 31, "Feb": 28, "Mar": 31, "Apr": 30 };
+                  const [currentMonth, setCurrentMonth] = useState(0);
+
+                  return (
+                    <>
+                      <Card className="bg-white shadow-md rounded-lg overflow-hidden">
+                        <CardHeader>
+                          <CardTitle className="text-lg font-semibold">பங்களிப்பு</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="flex items-center justify-between mb-2">
+                            <Button size="sm" onClick={() => setCurrentMonth((prev) => (prev === 0 ? months.length - 1 : prev - 1))}>
+                              Previous
+                            </Button>
+                            <span className="font-medium">{months[currentMonth]}</span>
+                            <Button size="sm" onClick={() => setCurrentMonth((prev) => (prev === months.length - 1 ? 0 : prev + 1))}>
+                              Next
+                            </Button>
+                          </div>
+                          <div className="grid grid-cols-7 gap-0.5">
+                            {[...Array(daysInMonth[months[currentMonth]])].map((_, index) => {
+                              const dayOfMonth = index + 1;
+                              const activityLevel = index % 5 === 0 ? 2 : index % 3 === 0 ? 1 : 0;
+                              const colorClass =
+                                activityLevel === 2 ? "bg-green-500" : activityLevel === 1 ? "bg-green-300" : "bg-gray-200";
+                              return (
+                                <div
+                                  key={index}
+                                  className={`w-6 h-6 rounded ${colorClass} border border-gray-100 flex items-center justify-center text-sm`}
+                                  title={`Day ${dayOfMonth}: ${activityLevel} contributions`}
+                                >
+                                  {dayOfMonth}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="bg-white shadow-md rounded-lg overflow-hidden">
+                        <CardHeader>
+                          <CardTitle className="text-lg font-semibold">Account Settings</CardTitle>
+                          <CardDescription>Manage your account preferences</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <Accordion type="single" collapsible>
+                            <AccordionItem value="item-1">
+                              <AccordionTrigger>Personal Information</AccordionTrigger>
+                              <AccordionContent>
+                                <div>
+                                  <p>
+                                    <strong>Email:</strong> {user?.email}
+                                  </p>
+                                  <p>
+                                    <strong>Account Created:</strong> {joinedDate}
+                                  </p>
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-2">
+                              <AccordionTrigger>Password</AccordionTrigger>
+                              <AccordionContent>
+                                <div>
+                                  <Button size="sm">Reset Password</Button>
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-3">
+                              <AccordionTrigger>Notifications</AccordionTrigger>
+                              <AccordionContent>
+                                <div>
+                                  <p>
+                                    <strong>Email Notifications:</strong> Enabled
+                                  </p>
+                                  <p>
+                                    <strong>Push Notifications:</strong> Disabled
+                                  </p>
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="bg-white shadow-md rounded-lg overflow-hidden">
+                        <CardHeader>
+                          <CardTitle className="text-lg font-semibold">Usage</CardTitle>
+                          <CardDescription>Your recent activity</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <Table>
+                            <TableCaption>Recent activities on your account</TableCaption>
+                            <TableHeader>
+                              <TableRow>
+                                <TableHead className="w-[100px]">Date</TableHead>
+                                <TableHead>Activity</TableHead>
+                                <TableHead>Details</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              <TableRow>
+                                <TableCell>-</TableCell>
+                                <TableCell>Account Creation</TableCell>
+                                <TableCell>Account created on {joinedDate}</TableCell>
+                              </TableRow>
+                            </TableBody>
+                          </Table>
+                        </CardContent>
+                      </Card>
+                    </>
+                  );
+                })()}
+              </div>
+            )}
+          </div>
+>>>>>>> 7465aa6c7b8c8de32c9638c45252aac95eef34b7
         </div>
       </div>
     </MainLayout>
