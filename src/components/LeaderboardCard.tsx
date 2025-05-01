@@ -31,9 +31,9 @@ const LeaderboardCard: React.FC<LeaderboardCardProps> = ({
         <div>
           <p className="text-sm font-medium tamil">{name}</p>
           <div className="flex items-center gap-2 text-xs text-gray-500">
-            <span>{followers} பின்தொடர்பவர்கள்</span>
+            <span>{followers} படைப்புகள்</span>
             <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-            <span>{works} படைப்புகள்</span>
+            <span>{works} பின்தொடர்பவர்கள்</span>
           </div>
         </div>
       </Link>
