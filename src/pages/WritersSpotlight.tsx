@@ -218,7 +218,7 @@ const WritersSpotlight = () => {
             <Award size={24} className="text-amber-500" />
             <span className="tamil">சிறந்த எழுத்தாளர்கள்</span>
           </h2>
-          <p className="text-gray-600">Today's top Tamil writers based on engagement</p>
+          <p className="text-gray-600">Weekly top Tamil writers</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
