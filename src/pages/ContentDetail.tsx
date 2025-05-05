@@ -107,7 +107,7 @@ const ContentDetail = () => {
           ...post,
           type: post.type as 'poem' | 'story' | 'opinion',
           author_name: authorData?.username || 'Unknown Author',
-          author_avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png', // Default avatar
+          author_avatar: '/profile.png', 
         });
         
         setLikes(likesCount || 0);
@@ -158,7 +158,7 @@ const ContentDetail = () => {
           return {
             ...comment,
             author_name: authorData?.username || 'Unknown User',
-            author_avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png', // Default avatar
+            author_avatar: '/profile.png', // Default avatar
           };
         })
       );

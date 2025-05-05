@@ -38,8 +38,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
           {children}
         </main>
-
-        {/* Mobile navigation removed as requested */}
       </div>
     </div>
   );

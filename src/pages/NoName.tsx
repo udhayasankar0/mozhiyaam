@@ -95,7 +95,7 @@ const NoName = () => {
             ...post,
             type: post.type as 'poem' | 'story' | 'opinion',
             author_name: profileData?.username || 'Unknown Author',
-            author_avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png', // Default avatar
+            author_avatar: '/profile.png', 
             likes: likesCount || 0,
             comments: commentsCount || 0,
             userLiked,
@@ -171,7 +171,7 @@ const NoName = () => {
                 excerpt={content.content}
                 authorId={content.user_id}
                 authorName={content.author_name || 'Unknown Author'}
-                authorAvatar={content.author_avatar || '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png'}
+                authorAvatar={content.author_avatar || 'profile.png'}
                 likes={content.likes}
                 comments={content.comments}
                 date={new Date(content.created_at).toLocaleDateString()}

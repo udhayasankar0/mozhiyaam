@@ -83,7 +83,7 @@ const WritersSpotlight = () => {
                 name: profile.username || 'Unknown User',
                 followers: likesCount, // Using likes as followers for now
                 works: postsCount || 0,
-                avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png'
+                avatar: '/profile.png'
               };
             })
           );
@@ -129,7 +129,7 @@ const WritersSpotlight = () => {
                 ...poem,
                 type: poem.type as 'poem' | 'story' | 'opinion',
                 author_name: profileData?.username || 'Unknown Author',
-                author_avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png',
+                author_avatar: '/profile.png', 
                 likes: likesCount || 0,
                 comments: commentsCount || 0,
                 totalEngagement
@@ -180,7 +180,7 @@ const WritersSpotlight = () => {
                 ...story,
                 type: story.type as 'poem' | 'story' | 'opinion',
                 author_name: profileData?.username || 'Unknown Author',
-                author_avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png',
+                author_avatar: '/profile.png',
                 likes: likesCount || 0,
                 comments: commentsCount || 0,
                 totalEngagement

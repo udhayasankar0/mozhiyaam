@@ -172,7 +172,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
           return {
             ...comment,
             author_name: authorData?.username || 'Unknown User',
-            author_avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png',
+            author_avatar: '/profile.png',
           };
         })
       );

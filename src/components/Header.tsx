@@ -86,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onRefresh }) => {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png" alt="Profile" />
+                  <AvatarImage src="/profile.png" alt="Profile" />
                   <AvatarFallback>{getInitials()}</AvatarFallback>
                 </Avatar>
               </button>

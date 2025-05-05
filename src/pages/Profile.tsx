@@ -135,7 +135,7 @@ const Profile = () => {
             <Card className="bg-white shadow-md rounded-lg overflow-hidden">
               <CardHeader className="flex flex-col items-center">
                 <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage src="/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png" alt="Profile" />
+                  <AvatarImage src="/profile.png" alt="Profile" />
                   <AvatarFallback>{getInitials()}</AvatarFallback>
                 </Avatar>
                 <CardTitle className="text-xl font-semibold">{userEmail}</CardTitle>
@@ -190,7 +190,7 @@ const Profile = () => {
                         excerpt={post.content?.substring(0, 150) + '...'}
                         authorId={post.user_id}
                         authorName={userEmail}
-                        authorAvatar="/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png"
+                        authorAvatar="/profile.png"
                         likes={0}
                         comments={0}
                         date={new Date(post.created_at).toLocaleDateString()}

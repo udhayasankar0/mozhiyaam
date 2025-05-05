@@ -54,7 +54,6 @@ const AppRoutes = () => {
       <Route path="/cross-word-game/level1" element={<LevelOne />} />
       <Route path="/cross-word-game/level2" element={<LevelTwo />} />
       {/* <Route path="/cross-word-game/level3" element={<LevelThree />} /> */}
-      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

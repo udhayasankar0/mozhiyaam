@@ -86,7 +86,7 @@ const Leaderboard = () => {
               posts_count: postsCount || 0,
               likes_count: likesCount,
               comments_count: commentsCount,
-              avatar: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png', // Default avatar
+              avatar: '/profile.png', 
               engagement_score: engagementScore
             };
           })

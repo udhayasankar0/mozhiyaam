@@ -19,18 +19,18 @@ const FollowList: React.FC<FollowListProps> = ({ type }) => {
 
 
   const hardcodedFollowers = [
-    { id: 'unknown1', username: 'Unknown User', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'udhay', username: 'udhay', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'muthupandi', username: 'Muthupandi M', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'ram', username: 'Ram', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'prabhakaran', username: 'Prabhakaran', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
+    { id: 'unknown1', username: 'Unknown User', avatar_url: '/profile.png' },
+    { id: 'udhay', username: 'udhay', avatar_url: '/profile.png' },
+    { id: 'muthupandi', username: 'Muthupandi M', avatar_url: '/profile.png' },
+    { id: 'ram', username: 'Ram', avatar_url: '/profile.png' },
+    { id: 'prabhakaran', username: 'Prabhakaran', avatar_url: '/profile.png' },
   ];
 
   const hardcodedFollowing = [
-    { id: 'prabhakaran', username: 'Prabhakaran', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'ram', username: 'Ram', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'udhay', username: 'udhay', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
-    { id: 'muthupandi', username: 'Muthupandi M', avatar_url: '/lovable-uploads/d8ec8cb6-fb3f-4663-bffd-f8c7748b84c9.png' },
+    { id: 'prabhakaran', username: 'Prabhakaran', avatar_url: '/profile.png' },
+    { id: 'ram', username: 'Ram', avatar_url: '/profile.png' },
+    { id: 'udhay', username: 'udhay', avatar_url: '/profile.png' },
+    { id: 'muthupandi', username: 'Muthupandi M', avatar_url: '/profile.png' },
   ];
 
 
